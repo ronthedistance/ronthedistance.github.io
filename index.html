@@ -1,7 +1,89 @@
 <!DOCTYPE html>
-<html>
-   <body>
-   <h1> hello hello, is this thing on? </h1>
-   <p> I assume this is where I start blogging. </p>
-   </body>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=468885581ed9fa7f5cda6f0bfa5229fcdac6970d">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Blog 0 (September 6, 2019) | furenchifurai.github.io</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Blog 0 (September 6, 2019)" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://furenchifurai.github.io/blog0.html" />
+<meta property="og:url" content="https://furenchifurai.github.io/blog0.html" />
+<meta property="og:site_name" content="furenchifurai.github.io" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Blog 0 (September 6, 2019)","url":"https://furenchifurai.github.io/blog0.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/FurenchiFurai/furenchifurai.github.io">View on GitHub</a>
+
+          <h1 id="project_title">furenchifurai.github.io</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        
+<h1 id="blog-0-september-6-2019">Blog 0 (September 6, 2019)</h1>
+
+<h3 id="cit160-lab-and-small-issues">CIT160 Lab and small issues</h3>
+
+<p>So the first thing I did was to start the CIT160L assignment to get Docker ready and installed. However while traversing through the assignment, there was one part that gave me trouble for around 30 mins.</p>
+
+<p>The Trouble: 
+<img src="https://github.com/FurenchiFurai/furenchifurai.github.io/blob/master/cit160%20lab%20errors.png?raw=true" alt="Trouble" /></p>
+
+<p>The first two commands did not give me issues too much, created the <code class="highlighter-rouge">etc</code> directory then navigated to it. Simple</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir cit160/etc
+$ cd cit160/etc
+</code></pre></div></div>
+
+<p>The third command was giving me the error, and in hindsight I did something wrong in a very stupid way.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ scp &lt;UID&gt;@ssh.sandbox.csun.edu:~steve/cit160/etc/dockerfile .
+</code></pre></div></div>
+
+<p>The thing I did wrong was when ran the command, out of habit when reading a command, I replaced <code class="highlighter-rouge">~steve</code> with my own username.  Since I did got it to work, I can say that it was just poor knowledge and overlooking the bash command.</p>
+
+<p>And so after trying multiple times, I consulted a friend who had taken this specific class the previous semester and he told me to simply type it verbatim, which worked perfectly. If I had read the instructions more carefully, I would understand that the only time I would have ever needed to supply any of my own information was when I saw the <code class="highlighter-rouge">&lt;USER&gt;</code> part appear.</p>
+
+<h3 id="creating-this-webpage-and-using-jekyllmarkdown">Creating this webpage and using Jekyll/Markdown</h3>
+
+<p>Surpsingly I thought this part was going to be the most difficult to achieve, but after fiddling with tutorials and the settings in the repository and creating/deleting some failed ones I was able to get Jekyll to work on the page.</p>
+
+<p>What I found easiest to do, was to simply create the repository which would be to use <code class="highlighter-rouge">&lt;username&gt;.github.io</code> as the repository name and then head off from there.</p>
+
+<p>Then head to your settings for that specific repository, and scroll down to <strong>Github Pages</strong> section and you are able to choose a theme that works, which in my case chose <em>Slate</em> and all markdown pages <code class="highlighter-rouge">.md</code> should automatically import the configuration settings from the <code class="highlighter-rouge">_config.yml</code> file. From there, you can populate the repository with your files to show online.</p>
+
+<p>Unfortunately, while I was doing this, I accidentally set my <a href="https://furenchifurai.github.io">README</a> to be the mainpage of my site, so for the time being, I’ll keep that until I find a fix for it in the near future.</p>
+
+<p><strong><em>This is my first time writing a blog post, so I am not sure if there are things needed to be added/removed and whether this is too short/long</em></strong></p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
 </html>
