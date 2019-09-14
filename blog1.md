@@ -23,9 +23,26 @@ I'm unsure why they aren't simply working so that I could do a <base-url>/blog/b
   So Lab 1 basically is comprising of setting up a web application in a docker container.
   A dockerfile is used so that an image can be built. This makes it so multiple containers will run the exact same application using the same dependencies, file structure, networking, etc. Microservices for the win.
 The dockerfile mainly composes of 
+
 ```RUN```which runs a specific binary upon building your image
 
 and
 
 ```COPY```which copies a file into a specified directory/filepath within your container
+
+both of these make up the sections which install packages such as apache or php, and resolves the dependencies necessary to operate them.
+
+I also have 
+
+```EXPOSE``` which exposes a port on build of your image
+
+and
+
+```CMD``` which can be used to run a command with specific parameters. 
   
+these are the last two files in the dockerfile and are part of an ongoing process to troubleshoot starting apache on starting the container.
+Right now, everything seems to work fine IF you enter the container yourself and start it up via ```service apache2 start``` or ```service apache2 restart```
+However, that's inefficient.
+
+Some google tells us that using those commands in the dockerfile performs them as background processes, and in order to start them properly upon entering the container, apachectl needs to be run IN THE FOREGROUND.
+However, this process is still ongoing. I cannot get it to work properly as of yet.
