@@ -1,5 +1,4 @@
 # ronthedistance.github.io
----
 layout: post
 title: blogthedistance
 author: generic blog title
@@ -7,7 +6,6 @@ email: ron913422@gmail.com
 description: Ramblings about and without life
 twitter_username: breadboxron
 github_username: ronthedistance
----
 
 Hello! You've reached the blog main page.
 This will be more fleshed out eventually, as a resource for me to talk about life, and things I may be learning about it and within it
