@@ -5,8 +5,13 @@
 ###Highlights of this week
 
 --Started playing with Jekyll, this is much better
+
 ---Did this lab
+
 ---Internship going well
+
+---Finally having some ideas about a senior design project
+
 
 ### Switching to Jekyll
 
@@ -52,5 +57,24 @@ Right now, everything seems to work fine IF you enter the container yourself and
 However, that's inefficient.
 
 Some google tells us that using those commands in the dockerfile performs them as background processes, and in order to start them properly upon entering the container, apachectl needs to be run IN THE FOREGROUND.
-However, this process is still ongoing. I cannot get it to work properly as of yet.
+However, this process of apache-on-staartup is still ongoing. I cannot get it to work properly as of yet.
+
+### Overexcited about new internship
+
+I started an internship with the walt disney company this week! Don't want to post it to linkedin quite yet, but here's github hearing it first!
+
+### Deciding between projects...
+
+Obviously I will take this up with the group.
+
+My two ideas are thus:
+
+```Project OpenHive```
+
+An AWS / Docker based honeynet which will check hashes file uploads or attempted exploits in various databases like virus total or against MITRE CVEs.
+
+Any which are not found in aforementioned databases will be kept in our own database for users to access and compare against traffic in their own networks.
+
+It's kind of like some weird ... opensource....threat intel feed? I'm still not sure how / what to consider it.
+
 
