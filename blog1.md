@@ -61,13 +61,13 @@ However, this process of apache-on-staartup is still ongoing. I cannot get it to
 I started an internship with the walt disney company this week! Don't want to post it to linkedin quite yet, but here's github hearing it first!
 
 ### Deciding between projects...
-![Eureka](https://user-images.githubusercontent.com/20525440/64903492-1c898800-d66f-11e9-91cc-42065ee628f8.jpg)
+![Eureka](https://user-images.githubusercontent.com/20525440/64903522-96217600-d66f-11e9-9d37-e8a1632b7a17.jpg)
 
 Obviously I will take this up with the group.
 
 My two ideas are thus:
 
-![openhive](https://user-images.githubusercontent.com/20525440/64903507-59ee1580-d66f-11e9-8c27-660bd27d8f44.png)
+![openhive](https://user-images.githubusercontent.com/20525440/64903524-9752a300-d66f-11e9-90e9-1689b3a7f204.png)
 ```Project OpenHive```
 
 An AWS / Docker based honeynet which will check hashes file uploads or attempted exploits in various databases like virus total or against MITRE CVEs.
@@ -76,8 +76,9 @@ Any which are not found in aforementioned databases will be kept in our own data
 
 It's kind of like some weird ... opensource....threat intel feed? I'm still not sure how / what to consider it.
 
-```CTdeFense```
 ![defense](https://user-images.githubusercontent.com/20525440/64903509-6b372200-d66f-11e9-823d-ce3e6817fa0f.png)
+```CTdeFense```
+
 
 Basically, CTFs are kind of offensively based in nature. I had the idea after Wicked6 to make a public CTF-ish site similar to overthewire, which would go over security basics in Linux.
 Basically, you'd be given a dockerfile or access to an ssh server which you would have to connect to in order to complete a challenge.
