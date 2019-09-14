@@ -2,7 +2,7 @@
 ### Week 2
 ```NOTE: This week I did not take screenshots throughout the process of completing the lab.```
 
-###Highlights of this week
+### Highlights of this week
 
 --Started playing with Jekyll, this is much better
 
