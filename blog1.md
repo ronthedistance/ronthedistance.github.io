@@ -17,6 +17,10 @@ Finally got off my lazy butt and decided to try Jekyll.
 This is much easier and I regret being stubborn.
 If you look through the messy commit history of this repo, you'll see my attempt at incorporating a better directory structure to the blog site. 
 I'm unsure why they aren't simply working so that I could do a <base-url>/blog/blog<number> , but i'm sure i'm just missing some small detail that I'll facepalm myself for later.
+
+***as a side note, because I kept refreshing the my browser after every commit, I was also manually refreshing my cache every time. 
+I learned ctrl+f5 will reload a page without caching, making it much easier.
+You might call it a messy use of the master branch, but I just refer to it as ### atomic commits ***
   
 ### Did lab 1....sort of.
   
@@ -46,3 +50,4 @@ However, that's inefficient.
 
 Some google tells us that using those commands in the dockerfile performs them as background processes, and in order to start them properly upon entering the container, apachectl needs to be run IN THE FOREGROUND.
 However, this process is still ongoing. I cannot get it to work properly as of yet.
+
