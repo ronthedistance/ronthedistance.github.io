@@ -68,6 +68,7 @@ Obviously I will take this up with the group.
 My two ideas are thus:
 
 ![openhive](https://user-images.githubusercontent.com/20525440/64903524-9752a300-d66f-11e9-90e9-1689b3a7f204.png)
+
 ```Project OpenHive```
 
 An AWS / Docker based honeynet which will check hashes file uploads or attempted exploits in various databases like virus total or against MITRE CVEs.
@@ -77,6 +78,7 @@ Any which are not found in aforementioned databases will be kept in our own data
 It's kind of like some weird ... opensource....threat intel feed? I'm still not sure how / what to consider it.
 
 ![defense](https://user-images.githubusercontent.com/20525440/64903509-6b372200-d66f-11e9-823d-ce3e6817fa0f.png)
+
 ```CTdeFense```
 
 
