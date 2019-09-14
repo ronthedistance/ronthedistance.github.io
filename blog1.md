@@ -71,6 +71,7 @@ My two ideas are thus:
 
 ```Project OpenHive```
 ![openhive](https://user-images.githubusercontent.com/20525440/64903524-9752a300-d66f-11e9-90e9-1689b3a7f204.png)
+
 An AWS / Docker based honeynet which will check hashes file uploads or attempted exploits in various databases like virus total or against MITRE CVEs.
 
 Any which are not found in aforementioned databases will be kept in our own database for users to access and compare against traffic in their own networks.
