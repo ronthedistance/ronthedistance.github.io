@@ -1,0 +1,28 @@
+# Examples
+
+## Example 1
+
+1. Which syscalls are invoke?
+2. What parameters are passed to these syscalls?
+
+## Example 2
+
+1. What high level programming construct does this example use?
+2. What is the value of the variable at rbp+4 when the program terminates?
+
+## Example 3
+
+1. What is the name of the function that is called from main?
+2. What is the address of the function that is called from main?
+3. How many parameters are passed to the function?
+4. What are the parameters that are passed to the function?
+
+## Example 4
+
+1. Find input that this program accepts as valid
+2. Patch the program to accept any input
+
+## Example 5
+
+1. Can you cause the program to crash?
+2. Why is the program crashing?
