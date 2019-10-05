@@ -2,7 +2,8 @@
 ### Week 5
 
 As is iterated from previous weeks, I am really good at procrastinating.
-Thus, project on the AWS project has yet to be made
+Thus, progress on the AWS project has yet to be made
+
 As the appointed leader of the group I should be leading by example though... 
 
 ### Hyper-V issues at work
@@ -19,8 +20,10 @@ I don't remember when it happened specifically, but at some point in the day I r
 
 Looking on google tells us this error is meant to be related to a problem with your virtual switch configuration. 
 ![image](https://user-images.githubusercontent.com/20525440/66249444-57b82d80-e6e8-11e9-94bd-5a8646bcdc30.png)
+
 ```picture taken from google```
 ![image](https://user-images.githubusercontent.com/20525440/66249547-f85b1d00-e6e9-11e9-94bd-51be55059915.png)
+
 ```picture taken on official microsoft forums```
 
 *I feel like at that much it's safe to assume that's the answer...*
