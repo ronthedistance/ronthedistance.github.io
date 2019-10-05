@@ -7,9 +7,20 @@ As the appointed leader of the group I should be leading by example though...
 
 ### Hyper-V issues at work
 ![image](https://user-images.githubusercontent.com/20525440/66249383-4cb0cd80-e6e7-11e9-8219-7f3d8f12b6b5.png)
+
 While I don't have anything to talk about AWS-wise for the senior project, I hope that this random github post helps someone else in the future.
 Hyper-V is a built in hypervisor, basically used to manage virtual machines.I run various configurations of kali and onion VMs in order to validate qualys data about vulnerabilities.
-But why make this post about all that?
+```But why make this post about all that?```
 
 I don't remember when it happened specifically, but at some point in the day I ran into the following error:
+
+
+### Error Code 32788
 ![image](https://user-images.githubusercontent.com/20525440/66249444-57b82d80-e6e8-11e9-94bd-5a8646bcdc30.png)
+
+
+Looking on google tells us this error is meant to be related to a problem with your virtual switch configuration. 
+![image](https://user-images.githubusercontent.com/20525440/66249547-f85b1d00-e6e9-11e9-94bd-51be55059915.png)
+```I feel like at that much it's safe to assume that's the answer...```
+
+So I went through multiple different iterations of virtual switches
