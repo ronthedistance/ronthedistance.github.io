@@ -37,7 +37,7 @@ I then made a new VM, with the exact same VDK (basically a backup copy of the DA
 To save you all a long story short of being that annoying intern that couldn't figure out how to make a virtual machine---
 See the following image.
 ![image](https://user-images.githubusercontent.com/20525440/66249600-e29a2780-e6ea-11e9-85d4-1052f8ded73e.png)
-***picture taken from offiial microsoft informational pages ***
+***picture taken from offiial microsoft informational pages***
 
 VM limits in Hyper-v state that from a technical standpoint, it should be able to reach terabytes of RAM if you're able to allow it.
 HOWEVER.
