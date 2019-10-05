@@ -44,6 +44,7 @@ HOWEVER.
 That is NOT the hyper-v that comes default to your computer.
 
 ![image](https://user-images.githubusercontent.com/20525440/66249632-6b18c800-e6eb-11e9-97d1-875904929c44.png)
+
 ***picture taken from microsoft forums***
 
 ```by default, the standalone version of Hyper-V can allot 4096 bits of memory to a VM before throwing errors```
