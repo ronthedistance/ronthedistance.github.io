@@ -15,12 +15,32 @@ Hyper-V is a built in hypervisor, basically used to manage virtual machines.I ru
 I don't remember when it happened specifically, but at some point in the day I ran into the following error:
 
 
-### Error Code 32788
-![image](https://user-images.githubusercontent.com/20525440/66249444-57b82d80-e6e8-11e9-94bd-5a8646bcdc30.png)
-
+### Hyper-V Error Code 32788
 
 Looking on google tells us this error is meant to be related to a problem with your virtual switch configuration. 
+![image](https://user-images.githubusercontent.com/20525440/66249444-57b82d80-e6e8-11e9-94bd-5a8646bcdc30.png)
 ![image](https://user-images.githubusercontent.com/20525440/66249547-f85b1d00-e6e9-11e9-94bd-51be55059915.png)
 ```I feel like at that much it's safe to assume that's the answer...```
 
-So I went through multiple different iterations of virtual switches
+So I went through multiple different iterations of virtual switches. External, internal, bridged, host only, and even tried NIC bonding. No dice.
+
+I then made a new VM, with the exact same VDK (basically a backup copy of the DATA of the virtual machine)
+
+```and everything works?...```
+
+###What gives?
+
+To save you all a long story short of being that annoying intern that couldn't figure out how to make a virtual machine---
+See the following image.
+![image](https://user-images.githubusercontent.com/20525440/66249600-e29a2780-e6ea-11e9-85d4-1052f8ded73e.png)
+
+VM limits in Hyper-v state that from a technical standpoint, it should be able to reach terabytes of RAM if you're able to allow it.
+HOWEVER.
+That is NOT the hyper-v that comes default to your computer.
+
+![image](https://user-images.githubusercontent.com/20525440/66249632-6b18c800-e6eb-11e9-97d1-875904929c44.png)
+
+
+```by default, the standalone version of Hyper-V can allot 4096 bits of memory to a VM before throwing errors```
+
+After changing the amount of memory being used by the original VM, it succuessfully booted up, giving me something to write about tonight!!!
