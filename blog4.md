@@ -51,3 +51,5 @@ That is NOT the hyper-v that comes default to your computer.
 ### The Solution
 
 After changing the amount of memory being used by the original VM, it succuessfully booted up, giving me something to write about tonight!!!
+
+What I suspect happened was that the virtual switch is one of the first configurations that is checked upon starting the hyper-v machine. When the process of starting up the virtual switch fails due to the aforementioned memory issue, the hyper-v manager assumes that it's an issue with the switch config as opposed to memory configs.
