@@ -28,7 +28,7 @@ I then made a new VM, with the exact same VDK (basically a backup copy of the DA
 
 ```and everything works?...```
 
-###What gives?
+### What gives?
 
 To save you all a long story short of being that annoying intern that couldn't figure out how to make a virtual machine---
 See the following image.
@@ -42,5 +42,6 @@ That is NOT the hyper-v that comes default to your computer.
 
 
 ```by default, the standalone version of Hyper-V can allot 4096 bits of memory to a VM before throwing errors```
+### The Solution
 
 After changing the amount of memory being used by the original VM, it succuessfully booted up, giving me something to write about tonight!!!
