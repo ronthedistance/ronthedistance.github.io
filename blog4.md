@@ -21,7 +21,7 @@ I don't remember when it happened specifically, but at some point in the day I r
 Looking on google tells us this error is meant to be related to a problem with your virtual switch configuration. 
 ![image](https://user-images.githubusercontent.com/20525440/66249444-57b82d80-e6e8-11e9-94bd-5a8646bcdc30.png)
 
-```picture taken from google```
+***picture taken from google***
 ![image](https://user-images.githubusercontent.com/20525440/66249547-f85b1d00-e6e9-11e9-94bd-51be55059915.png)
 
 ```picture taken on official microsoft forums```
@@ -37,13 +37,14 @@ I then made a new VM, with the exact same VDK (basically a backup copy of the DA
 To save you all a long story short of being that annoying intern that couldn't figure out how to make a virtual machine---
 See the following image.
 ![image](https://user-images.githubusercontent.com/20525440/66249600-e29a2780-e6ea-11e9-85d4-1052f8ded73e.png)
+***picture taken from offiial microsoft informational pages ***
 
 VM limits in Hyper-v state that from a technical standpoint, it should be able to reach terabytes of RAM if you're able to allow it.
 HOWEVER.
 That is NOT the hyper-v that comes default to your computer.
 
 ![image](https://user-images.githubusercontent.com/20525440/66249632-6b18c800-e6eb-11e9-97d1-875904929c44.png)
-
+***picture taken from microsoft forums***
 
 ```by default, the standalone version of Hyper-V can allot 4096 bits of memory to a VM before throwing errors```
 ### The Solution
