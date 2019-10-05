@@ -19,11 +19,12 @@ I don't remember when it happened specifically, but at some point in the day I r
 
 Looking on google tells us this error is meant to be related to a problem with your virtual switch configuration. 
 ![image](https://user-images.githubusercontent.com/20525440/66249444-57b82d80-e6e8-11e9-94bd-5a8646bcdc30.png)
+```picture taken from google```
 ![image](https://user-images.githubusercontent.com/20525440/66249547-f85b1d00-e6e9-11e9-94bd-51be55059915.png)
-```I feel like at that much it's safe to assume that's the answer...```
+```picture taken on official microsoft forums```
 
+*I feel like at that much it's safe to assume that's the answer...*
 So I went through multiple different iterations of virtual switches. External, internal, bridged, host only, and even tried NIC bonding. No dice.
-
 I then made a new VM, with the exact same VDK (basically a backup copy of the DATA of the virtual machine)
 
 ```and everything works?...```
