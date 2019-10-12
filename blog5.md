@@ -12,6 +12,7 @@ I've never had to manage the actual repositories.
 
 We haven't used issues in our project as of yet, but through them we can assign various tasks to our group members.
 It also allows you to label these issues, allowing others who visit the repository to see bugs, documentation fixes, and the like.
+
 ```Wiki```
 
 This section is self explanatory, but it's nice to know that I was missing out on an entirely helpful section of github pages because i really only went so far as the directories I was looking for once I found the pages I wanted in google.
