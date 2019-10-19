@@ -38,3 +38,29 @@ The VPC being used is obviously the non-default one that was created.
 The availability zone corresponds to column D in the first figure.
 The IPv4 CIDR block is used to determine the range and number of hosts within this subnet, see subnet cheat sheet shown before.
 
+```The process for public and private subnets was majority the same, the different being the number of hosts being specified by a /20 network as opposed to a /22```
+
+
+### Creating the routing table(s)
+
+![image](https://user-images.githubusercontent.com/20525440/67139159-ba89e880-f201-11e9-94af-7b765841df15.png)
+
+The routing table page looks like this. Here we see the 2 default subnets in addition to the 2 created by our team.
+
+
+![image](https://user-images.githubusercontent.com/20525440/67139193-2bc99b80-f202-11e9-9541-90f3aec3e3ad.png)
+
+Changing the routes within rquires you to simply click the route you want to edit and click "edit routes"
+
+shown is the routing table used for the "public" route.
+
+
+### Internet Gateway
+![image](https://user-images.githubusercontent.com/20525440/67139217-574c8600-f202-11e9-9b85-63e0733a5e20.png)
+
+The current IGW looks like this. This feature acts like a virtual router that connects us to public internet.
+
+In the previously shown routing table, we see that our IGW is connected to the public routing table. 
+
+With that we have sufficiently completed all requirements.
+
