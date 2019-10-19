@@ -11,15 +11,16 @@ Or maybe I was just confused about requirements
 
 So. I don't exactly remember the specifics, but I remember saying to myself "oh. I did it all wrong. To sate my paranoia, the requirements are shown here.
 
-
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ![image](https://user-images.githubusercontent.com/20525440/67138822-eefba580-f1fd-11e9-9e4b-66782e848cf5.png)
-
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ### Creating the subnets
 https://www.aelius.com/njh/subnet_sheet.html
 I used this cheatsheet to reference the subnet IDs this time.
 
 The first 3 subnets are public with 1024 available IP addresses.
 
+You also see the available number of hosts in column B.
 
 ![image](https://user-images.githubusercontent.com/20525440/67138982-9fb67480-f1ff-11e9-89b9-cea432d68c9d.png)
 
