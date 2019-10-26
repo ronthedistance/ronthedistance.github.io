@@ -46,7 +46,7 @@ volatility -f refresh-my-memory.dmp --profile=Win7SP1x64 pslist
 
 ![image](https://user-images.githubusercontent.com/20525440/67615028-c2a2d480-f77b-11e9-9003-7f9e67a6bfb3.png)
 
-PS list is a volatility modules which lists any information about processes in a given file.
+PS list is a volatility module which lists any information about processes in a given file.
 Here we see the memory address, name, process id, thread count, and more. 
 An alternative to pslist is psscan, which does the same thing but additionally attempts to locate information on terminated processes and "hidden" processes.
 
