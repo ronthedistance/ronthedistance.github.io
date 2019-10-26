@@ -1,66 +1,47 @@
-# Blog 6 [10.18.2019]
+# Blog 7 [10.25.2019]
 ### Week 5
 
-So it turns out I completely did the VPC and Subnetting incorrectly last time.
 
-Today is just going to be some screenshots on how I'm pretty sure it's supposed to look. 
-Or maybe I was just confused about requirements 
+### Memory forensics basics with Volatility
 
-### Creating the VPC (Again...)
+At my internship, there was an end of the year event that was a large assembly of capture-the-flag challenges surrounding what we did in the various functions. This post talks about how I got one of these flags by enumerating process within a windows dump file, and grepping for the information I desired.
 
 
-So. I don't exactly remember the specifics, but I remember saying to myself "oh. I did it all wrong. To sate my paranoia, the requirements are shown here.
+
+From the beginning, I was given a .dmp file called ```refresh-my-memory.dmp```
+
+These files are typically used to help determine why something crashes, akin to a windows blue screen making process information files upon crash. 
+
+![image](https://user-images.githubusercontent.com/20525440/67614990-1cef6580-f77b-11e9-9731-c6c3e08ee90f.png)
+You can also create a dump file of a specific process via task manager in windows.
+
+More information on dump files shown here: https://fileinfo.com/extension/dmp
+
+While there are tools you can use such as windows SDK to debug using this file, volatility is a popular memory forensics tool that you can use to parse the process information from these files.
+
+More information on volatility shown here: https://www.volatilityfoundation.org/26
+
 
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-![image](https://user-images.githubusercontent.com/20525440/67138822-eefba580-f1fd-11e9-9e4b-66782e848cf5.png)
+### Memory dumping
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-### Creating the subnets
-https://www.aelius.com/njh/subnet_sheet.html
-I used this cheatsheet to reference the subnet IDs this time.
+Before doing anything with the actual process information, we want to enumerate the information necessary to read the file. 
+```
+volatility -f  refresh-my-memory.dmp imageinfo
+```
+The command above is used to get information about the dmp file. 
 
-The first 3 subnets are public with 1024 available IP addresses.
+![image](https://user-images.githubusercontent.com/20525440/67615010-8a02fb00-f77b-11e9-941c-2ee9cc0bed5e.png)
 
-You also see the available number of hosts in column B.
+Notice the “Suggested Profile(s)” section. Profiles in volatility are used to specify what type of system the memory dump came from. Without a properly selected profile, we may not be able to find any proesses, or have mangled names such as: “?|?A[]??csrss.ex”.
+We end up using the first profile, Win7SP1x64. It is the first format given to us and seems to work for our purposes.
 
-Column C highlights the different availability zones.
+The following command will search througuh process information within the dump file.
 
-Column D highlights the routing table.
+```volatility -f refresh-my-memory.dmp --profile=Win7SP1x64 pslist```
 
-![image](https://user-images.githubusercontent.com/20525440/67138982-9fb67480-f1ff-11e9-89b9-cea432d68c9d.png)
+![image](https://user-images.githubusercontent.com/20525440/67615028-c2a2d480-f77b-11e9-9003-7f9e67a6bfb3.png)
 
-
-![image](https://user-images.githubusercontent.com/20525440/67139001-bd83d980-f1ff-11e9-9e19-4819f136947f.png)
-
-The subnets are created via the subnet creation tool seen as "Create Subnet", the royal blue button at the top left of the subnets area.
-
-Name tag here corresponds to column A in the first figure.
-The VPC being used is obviously the non-default one that was created.
-The availability zone corresponds to column D in the first figure.
-The IPv4 CIDR block is used to determine the range and number of hosts within this subnet, see subnet cheat sheet shown before.
-
-```The process for public and private subnets was majority the same, the different being the number of hosts being specified by a /20 network as opposed to a /22```
-
-
-### Creating the routing table(s)
-
-![image](https://user-images.githubusercontent.com/20525440/67139159-ba89e880-f201-11e9-94af-7b765841df15.png)
-
-The routing table page looks like this. Here we see the 2 default subnets in addition to the 2 created by our team.
-
-
-![image](https://user-images.githubusercontent.com/20525440/67139193-2bc99b80-f202-11e9-9541-90f3aec3e3ad.png)
-
-Changing the routes within rquires you to simply click the route you want to edit and click "edit routes"
-
-shown is the routing table used for the "public" route.
-
-
-### Internet Gateway
-![image](https://user-images.githubusercontent.com/20525440/67139217-574c8600-f202-11e9-9b85-63e0733a5e20.png)
-
-The current IGW looks like this. This feature acts like a virtual router that connects us to public internet.
-
-In the previously shown routing table, we see that our IGW is connected to the public routing table. 
-
-With that we have sufficiently completed all requirements.
-
+PS list is a volatility modules which lists any information about processes in a given file.
+Here we see the memory address, name, process id, thread count, and more. 
+An alternative to pslist is psscan, which does the same thing but additionally attempts to locate information on terminated processes and "hidden" processes.
