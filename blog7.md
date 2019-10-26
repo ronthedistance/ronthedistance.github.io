@@ -48,7 +48,10 @@ Here we see the memory address, name, process id, thread count, and more.
 An alternative to pslist is psscan, which does the same thing but additionally attempts to locate information on terminated processes and "hidden" processes.
 
 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 ### Finding the actual flag(s)
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
 ![image](https://user-images.githubusercontent.com/20525440/67615054-0d245100-f77c-11e9-9be8-d0f62e5198e5.png)
 
 After spot checking the numerous processes given off by pslist (this dump file was almost 3 gigabytes), we notice two instances of notepad open from the user.
@@ -79,6 +82,7 @@ And thus I found what I was looking for.
 ![image](https://user-images.githubusercontent.com/20525440/67615145-401b1480-f77d-11e9-823f-d740b83f66f9.png)
 
 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 Incidentally speaking,  I ended up finding another flag on accident whilst looking through the dump of a photoshop file.
 
 While I don't have a screenshot, I later found out it was possible to retrieve the raw binary information of an image being used in photoshop to then import into image viewer in order to view it's contents.
