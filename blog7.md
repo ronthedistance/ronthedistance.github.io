@@ -26,6 +26,7 @@ More information on volatility shown here: https://www.volatilityfoundation.org/
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 ### Memory dumping
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
 Before doing anything with the actual process information, we want to enumerate the information necessary to read the file. 
 ```
 volatility -f  refresh-my-memory.dmp imageinfo
@@ -83,6 +84,7 @@ And thus I found what I was looking for.
 
 
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
 Incidentally speaking,  I ended up finding another flag on accident whilst looking through the dump of a photoshop file.
 
 While I don't have a screenshot, I later found out it was possible to retrieve the raw binary information of an image being used in photoshop to then import into image viewer in order to view it's contents.
