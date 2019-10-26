@@ -40,7 +40,9 @@ We end up using the first profile, Win7SP1x64. It is the first format given to u
 
 The following command will search througuh process information within the dump file.
 
-```volatility -f refresh-my-memory.dmp --profile=Win7SP1x64 pslist```
+```
+volatility -f refresh-my-memory.dmp --profile=Win7SP1x64 pslist
+```
 
 ![image](https://user-images.githubusercontent.com/20525440/67615028-c2a2d480-f77b-11e9-9003-7f9e67a6bfb3.png)
 
@@ -58,7 +60,9 @@ An alternative to pslist is psscan, which does the same thing but additionally a
 After spot checking the numerous processes given off by pslist (this dump file was almost 3 gigabytes), we notice two instances of notepad open from the user.
 
 Note that after "notepad.exe" we have a column specifying the PID of the process at the time the dump is taken. We can use this to more specifically find memory that we're interested in with the following command.
-``` Volatility –f ./refresh-my-memory.dmp –profile Win7SP1x64 memdump –dump.dir=./FileHandles –p 328```
+``` 
+Volatility –f ./refresh-my-memory.dmp –profile Win7SP1x64 memdump –dump.dir=./FileHandles –p 328
+```
 
 "memdump" is a volatility module that is short for "memory dump". as the name implies, it takes the whatever information can be found about a given processes' stack frame at the time of execution. 
 
