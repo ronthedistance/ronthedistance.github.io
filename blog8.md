@@ -34,3 +34,22 @@ The above image is the results of testing the function.
 Cloud watch is another AWS service that allows you to monitor resources and applications. For our purposes however, we can use it to set rules to run the start ec2 instance function similar to a crontab.
 
 
+![image](https://user-images.githubusercontent.com/20525440/68067359-f5f8dc80-fd02-11e9-967f-a77b02d75106.png)
+
+Under cloudwatch --> rules --> create rules we can assign a crontab-like configuration to a target lambda function.
+
+Here, we use the cron expression ```"0 3 ? * 6 *"```. 
+
+Note that in order for this to function, either the day or the month or the day of the week portion of the cron expression MUST be a question mark. I had a lot of head aches with this. 
+
+The question mark functions similarly to a wildcard, but exists because the number of days in a month can vary. By designating a question mark, it stands for "no specific value" as opposed to "any / all potential values" that a wildcard would stand for.
+
+Our specific cron expression stands for:
+```3:00 on any given day of the month that is a friday```
+
+shown in the cron expression "next trigger dates" in the left panel.
+
+
+The cloudwatch console is important because it allows us to schedule uptime for our instances specifically for the portions of time that we need them up to demo for senior design. 
+
+This saves us precious AWS credits now that our AWS free tier has expired on our console, so long as we don't manually start services unecessarily.
