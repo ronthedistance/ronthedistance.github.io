@@ -26,3 +26,11 @@ Using a python 3.7 environment, it creates an object that references our ec2 ins
 
 The above image is the results of testing the function.
 
+
+
+![image](https://user-images.githubusercontent.com/20525440/68067327-7d921b80-fd02-11e9-86e0-2c89dac62439.png)
+
+
+Cloud watch is another AWS service that allows you to monitor resources and applications. For our purposes however, we can use it to set rules to run the start ec2 instance function similar to a crontab.
+
+
