@@ -20,4 +20,9 @@ The following image shows the current status of our start/stop ec2 instance lamb
 ![image](https://user-images.githubusercontent.com/20525440/68067287-cc8b8100-fd01-11e9-80d2-f67ec3688221.png)
 
 The image shown is the simple code necessary to complete the ec2 start in this case.
+Using a python 3.7 environment, it creates an object that references our ec2 instance named "ec2". From there, the object has a built in function called start_instances that spins up the instance id given to it when called.
+
+![image](https://user-images.githubusercontent.com/20525440/68067305-16746700-fd02-11e9-80a1-080479289226.png)
+
+The above image is the results of testing the function.
 
