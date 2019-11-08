@@ -61,3 +61,23 @@ Terraform has 4 basic commands that a user should run once their .tf files are c
 >terraform plan
 
 >terraform apply
+
+Terraform validate is a built-in syntax check for .tf files. Running it will print out in console regarding typos in resource names and the like.
+
+
+![image](https://user-images.githubusercontent.com/20525440/68503431-ae4ce600-0217-11ea-8252-6f216259a297.png)
+
+Terraform init exists to initliaze any necessary binaries in order to get your .tf to run
+In this example shown above, we see that after specifying our provider, aws, terraform init is used to download the binaries necessary to create AWS resources declared in our .tf files.
+
+![image](https://user-images.githubusercontent.com/20525440/68503883-bbb6a000-0218-11ea-877f-899120716f6f.png)
+
+Terraform plan exists to show the changes that will be put in place. The above image is an example of the console print out for an aws instance with various other devices as a portion of it. It currently says that the printout is from a "terraform apply". Terraform plan used to be mandatory before executing the configuration, but now you can get a printout as soon as you run terraform apply.
+
+I would still probably always use plan just to make sure things go smoothly
+![image](https://user-images.githubusercontent.com/20525440/68503927-d9840500-0218-11ea-8188-e3534f26e248.png)
+
+This shows how .tf configuration blocks are shown within terraform plan.
+
+
+Terraform apply executes on configurations within the .tf file.
