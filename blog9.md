@@ -34,7 +34,7 @@ This is an example of a small block of terraform code.
 The inner configuration elements are in the block defined by the curly braces and are arguments needed to create the resources itself. 
 
 So in the image shown, we declare to use the VPC resource from AWS, and from here on it, anything talking about "project1-vpc" is going to refer to the resource instance as shown in the image above. We then declare that this VPC will be able to use DNS, and consists of the 172.16../16 network.
-Lastly, we see the "tag" section. This is the actual tag that can be used to search or reference this VPC resource within AWS cli or the AWS console. it DOES NOT have to be equal to the tag given by Terraform in the beginning.
+Lastly, we see the "tag" section. This is the actual tag that can be used to search or reference this VPC resource within AWS cli or the AWS console. **_it DOES NOT have to be equal to the tag given by Terraform in the beginning_**. ~~This may have been a headache for me when I was playing around with it~~
 
 Regarding the resource and item ID mentioned earlier, these can be referred to in later resources using curly braces.
 
@@ -47,6 +47,8 @@ How do I know it's in that vpc?
 >vpc_id = "${aws_vpc.project1-vpc.id}"
 
 Is used to pull the vpc id from the resource we declared earlier. This allows us to make changes to variables accross multiple TF files without having to manually type in the ID for each resource block.
+
+We can also use this syntax to specify variables from other .tf files.
 
 I won't go into my full terraform code, but I will give a little bit of detail on what to do after.
 
@@ -69,6 +71,10 @@ Terraform validate is a built-in syntax check for .tf files. Running it will pri
 
 Terraform init exists to initliaze any necessary binaries in order to get your .tf to run
 In this example shown above, we see that after specifying our provider, aws, terraform init is used to download the binaries necessary to create AWS resources declared in our .tf files.
+
+For me specifically, make sure that they provider version that you have matches completely. 
+```provider.aws: version = "~> 2.10"```
+Here we see that the version must be specified with this syntax. If you only have 2.1 ~~It becomes a major headache~~, terraform init will tell you it cannot initialize your workspace due to being unable to download binaries for your provider.
 
 ![image](https://user-images.githubusercontent.com/20525440/68503883-bbb6a000-0218-11ea-877f-899120716f6f.png)
 
