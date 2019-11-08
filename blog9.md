@@ -55,6 +55,9 @@ I won't go into my full terraform code, but I will give a little bit of detail o
 
 Terraform has 4 basic commands that a user should run once their .tf files are configured.
 >terraform validate
+
 >terrform init
+
 >terraform plan
+
 >terraform apply
