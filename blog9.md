@@ -34,6 +34,7 @@ This is an example of a small block of terraform code.
 The inner configuration elements are in the block defined by the curly braces and are arguments needed to create the resources itself. 
 
 So in the image shown, we declare to use the VPC resource from AWS, and from here on it, anything talking about "project1-vpc" is going to refer to the resource instance as shown in the image above. We then declare that this VPC will be able to use DNS, and consists of the 172.16../16 network.
+
 Lastly, we see the "tag" section. This is the actual tag that can be used to search or reference this VPC resource within AWS cli or the AWS console. **_it DOES NOT have to be equal to the tag given by Terraform in the beginning_**. ~~This may have been a headache for me when I was playing around with it~~
 
 Regarding the resource and item ID mentioned earlier, these can be referred to in later resources using curly braces.
@@ -78,7 +79,9 @@ Here we see that the version must be specified with this syntax. If you only hav
 
 ![image](https://user-images.githubusercontent.com/20525440/68503883-bbb6a000-0218-11ea-877f-899120716f6f.png)
 
-Terraform plan exists to show the changes that will be put in place. The above image is an example of the console print out for an aws instance with various other devices as a portion of it. It currently says that the printout is from a "terraform apply". Terraform plan used to be mandatory before executing the configuration, but now you can get a printout as soon as you run terraform apply.
+Terraform plan exists to show the changes that will be put in place. The above image is an example of the console print out for an aws instance with various other devices as a portion of it. 
+
+It currently says that the printout is from a "terraform apply". Terraform plan used to be mandatory before executing the configuration, but now you can get a printout as soon as you run terraform apply.
 
 I would still probably always use plan just to make sure things go smoothly
 ![image](https://user-images.githubusercontent.com/20525440/68503927-d9840500-0218-11ea-8188-e3534f26e248.png)
@@ -87,3 +90,15 @@ This shows how .tf configuration blocks are shown within terraform plan.
 
 
 Terraform apply executes on configurations within the .tf file.
+From there, it saves the IDs being referenced to a **_VERY IMPORTANT, VERY NECESSARY TO KEEP TRACK OF FILE_**
+
+
+![image](https://user-images.githubusercontent.com/20525440/68505452-17365d00-021c-11ea-9aed-e2ca1f182330.png)
+The .tf state can be viewed via terraform show. As stated before, it shows what specific strings are being referenced by terraform for specific variables.
+
+If you're having trouble with things showning up ~~like accidentally making a typo in the availability zone and never catching it during terraform plan~~~ then it would be best to check the tfstate to make sure variables are being properly referenced.
+
+
+Lastly, when working with a team, it may be best to use a remote state for your team's tfstate.
+Through this, teams can work on components of infrastructure and ensure that they are running from the same terrraform outputs (the values of the variables shown, e.g. id = ___)___
+Instructions and more on remote state [here](https://www.terraform.io/docs/state/remote.html)
