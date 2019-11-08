@@ -35,24 +35,14 @@ The inner configuration elements are in the block defined by the curly braces an
 So in the image shown, we declare to use the VPC resource from AWS, and from here on it, anything talking about "project1-vpc" is going to refer to the resource instance as shown in the image above. We then declare that this VPC will be able to use DNS, and consists of the 172.16../16 network.
 Lastly, we see the "tag" section. This is the actual tag that can be used to search or reference this VPC resource within AWS cli or the AWS console. it DOES NOT have to be equal to the tag given by Terraform in the beginning.
 
+Regarding the resource and item ID mentioned earlier, these can be referred to in later resources using curly braces.
 
-provider "aws" {
-  profile    = "default"
-  region     = "us-east-1"
-}
+![image](https://user-images.githubusercontent.com/20525440/68502164-a2135980-0214-11ea-9b49-e7c7d3411251.png)
 
-resource "aws_instance" "example" {
-  ami           = "ami-2757f631"
-  instance_type = "t2.micro"
-}
+Here we see the block used to create a subnet within the vpc shown earlier.
 
-# create a VPC
-resource "aws_vpc" "project1-vpc" {
-  cidr_block           = "172.16.0.0/16"
-  enable_dns_hostnames = true
-  enable_dns_support   = true
+How do I know it's in that vpc?
 
-  tags = {
-    Name = "project1_vpc"
-  }
-}
+>vpc_id = "${aws_vpc.project1-vpc.id}"
+
+Is used to pull the vpc id from the resource we declared earlier. This allows us to make changes to variables accross multiple TF files without having to manually type in the ID for each resource block.
