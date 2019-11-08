@@ -2,7 +2,7 @@
 
 The second week of our foray into infrastructure as code introduces us to another devops buzzword: terraform.
 
-### Terraform by hashicorp
+## Terraform by hashicorp
 ![image](https://banner2.cleanpng.com/20180529/szy/kisspng-terraform-hashicorp-microsoft-azure-infrastructure-5b0e0b6cc80963.2449977615276470848194.jpg)
 
 
@@ -17,7 +17,7 @@ The only change being that the file must be named ```.tf.json``` as opposed to s
 That being said:on the topic of .tf files...
 
 
-# Terraform configuration files.
+### Terraform configuration files.
 
 Terraform mainly works by reading infrastructure configuration from .tf files.
 
@@ -27,6 +27,7 @@ Here is an example from my github
 This is an example of a small block of terraform code.
 
 >resource 
+
 "Resource" a built-in terraform element that tells terraform to use the following block to create a resource using the following configuration variables, defines by the curly braces. The resource type "VPC" in this case and the resource name "project1-vpc" are used as an identifier for the Terraform module, but does not necessarily have significance ouside Terraform.
 
 The inner configuration elements are in the block defined by the curly braces and are arguments needed to create the resources itself. 
