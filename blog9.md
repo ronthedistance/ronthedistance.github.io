@@ -47,3 +47,14 @@ How do I know it's in that vpc?
 >vpc_id = "${aws_vpc.project1-vpc.id}"
 
 Is used to pull the vpc id from the resource we declared earlier. This allows us to make changes to variables accross multiple TF files without having to manually type in the ID for each resource block.
+
+I won't go into my full terraform code, but I will give a little bit of detail on what to do after.
+
+
+### Terraform commands
+
+Terraform has 4 basic commands that a user should run once their .tf files are configured.
+>terraform validate
+terrform init
+terraform plan
+terraform apply
