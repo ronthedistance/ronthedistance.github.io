@@ -10,7 +10,7 @@ Terraform is an application that seems to be the poster child of the "infrastruc
 
 Through various configuration files that are structured it's own native syntax, we can produce code to spin up machines that are exactly identical to each other, as well as change the amount of resources they individually use.
 
-Terraform syntax is very similar to JSON, so much so they they even natively support JSON, as shown [https://www.terraform.io/docs/configuration/syntax-json.html ][here:]
+Terraform syntax is very similar to JSON, so much so they they even natively support JSON, as shown [here:](https://www.terraform.io/docs/configuration/syntax-json.html)
 
 The only change being that the file must be named ```.tf.json``` as opposed to simply ```.tf```
 
