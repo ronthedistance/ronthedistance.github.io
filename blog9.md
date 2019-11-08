@@ -3,7 +3,8 @@
 The second week of our foray into infrastructure as code introduces us to another devops buzzword: terraform.
 
 ## Terraform by hashicorp
-![image](https://banner2.cleanpng.com/20180529/szy/kisspng-terraform-hashicorp-microsoft-azure-infrastructure-5b0e0b6cc80963.2449977615276470848194.jpg)
+![kisspng-terraform-hashicorp-microsoft-azure-infrastructure-5b0e0b6d0be980 0079130015276470850488](https://user-images.githubusercontent.com/20525440/68502909-71ccba80-0216-11ea-991a-e697e956e51a.png)
+
 
 
 Terraform is an application that seems to be the poster child of the "infrastructure as code" phenomenon.
