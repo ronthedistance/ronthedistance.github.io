@@ -1,6 +1,6 @@
 # Blog 10 [11.15.2019]
 
-With the terraform for my portion of th project completed last week,  I wanted to talk about a pet project I'm setting up to practice using AWS and/or terraform. 
+With the terraform for my portion of the project completed last week,  I wanted to talk about a pet project I'm setting up to practice using AWS and/or terraform. 
 
 ## Custom Modded Minecraft servers via AWS
 
@@ -37,6 +37,44 @@ Thus I had my requirements:
 -A way to change the modpack necessary in addition to saving world files
 ```
 
+###Progress so far...
 
+![image](https://user-images.githubusercontent.com/20525440/68989571-abe12200-07fd-11ea-82c2-2641bf7661f2.png)
 
+Luckily for me, there is a little bit of precedence regarding this matter. The service diagram shown above is what I'm going to be emulating for the skeleton of this project. Some eventual additions include some lambda functions which will webscrape the necessary webpages in order for me to figure out what the most recent mod versions are, what version of the modloader I'll need to download, and the ability to load different configuration files from an s3 bucket to change how the world works (e.g. less agressive mobs, different world seedfiles, etc).
 
+Note that the port specified *25565* is the port necessary to run a publicly accessible minecraft server. I also wish to create a cloudwatch event that monitors traffic to my ec2 instance on this port. If there is no traffic to my ec2 instance on that port for, say, 2 hours, I want a lambda function to run to stop the instance so I'm not wasting precious money.
+
+# s3 bucket
+![image](https://user-images.githubusercontent.com/20525440/68989639-83a5f300-07fe-11ea-9da9-a1539fe6255d.png)
+
+I started by creating an s3 bucket to contain any necessary files.
+
+![image](https://user-images.githubusercontent.com/20525440/68989652-9b7d7700-07fe-11ea-9ade-d54a6625e41a.png)
+
+This bucket currently contains a "setup" folder, which holds 3 things: The modloader, a systemd service file called minecraft.service, and a mods.zip folder which contains the necessary files for the server to run. Note that the modloader version is 1.12.2, build 2756. This is a very specific number necessary to run the current version of rlCraft. For interest's sake, the current version of minecraft is 1.14, heading into 1.15 early 2020.
+
+![image](https://user-images.githubusercontent.com/20525440/68989727-6cb3d080-07ff-11ea-8e48-0a1101f381a6.png)
+![image](https://user-images.githubusercontent.com/20525440/68989738-9240da00-07ff-11ea-8721-49e72b55b1cd.png)
+
+Through the twitch desktop app, there does exist a pre-made modpack for rlcraft. exporting the profile and opening the folder associated shows up the mods necessary to run this version of the game.
+
+For anyone reading this in the future, it may be useful to run this mod locally to see if you're comfortable lowering the amount of memory to 4 or 5 gb, or if you want even more memory . I am personally fine with how it runs on 6gb of ram.
+
+We  can eventually webscrape this page for the necessary mod, modloader, minecraft version numbers we need. For now, we will zip the necessary mods we need and leave it as is.
+
+![image](https://user-images.githubusercontent.com/20525440/68989767-07141400-0800-11ea-9c53-1531fcb06921.png)
+
+The systemd "minecraft.service" file in the bucket allows us to start the minecraft server as soon as the ec2 instance turns on. Notice that the service type is ran by the user "ec2-user" and uses the java binary on the "forge-1.12.2-14.23.5.2838-universal.jar" which is our modloader.
+
+#permissions and IAM
+
+With the s3 bucket containing the resources necessary, we need to create a role in IAM that allows the minecraft server to both pull and save to the bucket in question ( named rlcraft-server-l8 in our example )
+
+![image](https://user-images.githubusercontent.com/20525440/68989838-d5e81380-0800-11ea-9896-8224ad72b44b.png)
+
+This is the policy created that will be attached to the role. Note the most important functions: "Listbucket, getobject, putobject".
+
+![image](https://user-images.githubusercontent.com/20525440/68989848-f6b06900-0800-11ea-8569-67be3feea959.png)
+
+This is the role which that policy attaches to.
