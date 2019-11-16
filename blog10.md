@@ -13,7 +13,15 @@ However, realms only allows for a limited amount of users, 10. Additionally you 
 
 ![image](https://user-images.githubusercontent.com/20525440/68989388-eb5a3f00-07fa-11ea-9369-f77741db486f.png)
 
-Looking online at prices for modded minecraft servers seems to be much pricier. The most popular solution 
+Looking online at prices for modded minecraft servers seems to be much pricier. The most popular solution "curseforge" is somewhat pricy. 
+
+For a 6gb instance, you'd be paying normally more than 50$ per month.
+
+The reason being that a modded minecraft server has much more dependencies to manage. For something like rlCraft (the mod I wanted to host) ```there are dozens of individual java files necessary to run a server.``` As shown below.
+
+![image](https://user-images.githubusercontent.com/20525440/68989459-0f6a5000-07fc-11ea-8723-fa32009b5de6.png)
+
+Each of these will have a minimum of 1 configuration file associated with it, and may have dependencies like a certain version of the java development kit or certain resource packs such as textures or shaders to be included in a readable directory.
 
 Terraform is an application that seems to be the poster child of the "infrastructure as code" phenomenon.
 
