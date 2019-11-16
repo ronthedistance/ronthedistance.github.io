@@ -77,4 +77,4 @@ This is the policy created that will be attached to the role. Note the most impo
 
 ![image](https://user-images.githubusercontent.com/20525440/68989848-f6b06900-0800-11ea-8569-67be3feea959.png)
 
-This is the role which that policy attaches to.
+This is the role which that policy attaches to. It's an ec2 instance role with specific s3 bucket permissions.
