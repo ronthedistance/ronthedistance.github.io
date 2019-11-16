@@ -67,7 +67,7 @@ We  can eventually webscrape this page for the necessary mod, modloader, minecra
 
 The systemd "minecraft.service" file in the bucket allows us to start the minecraft server as soon as the ec2 instance turns on. Notice that the service type is ran by the user "ec2-user" and uses the java binary on the "forge-1.12.2-14.23.5.2838-universal.jar" which is our modloader.
 
-#permissions and IAM
+# permissions and IAM
 
 With the s3 bucket containing the resources necessary, we need to create a role in IAM that allows the minecraft server to both pull and save to the bucket in question ( named rlcraft-server-l8 in our example )
 
@@ -78,3 +78,16 @@ This is the policy created that will be attached to the role. Note the most impo
 ![image](https://user-images.githubusercontent.com/20525440/68989848-f6b06900-0800-11ea-8569-67be3feea959.png)
 
 This is the role which that policy attaches to. It's an ec2 instance role with specific s3 bucket permissions.
+
+### the actual server
+
+![image](https://user-images.githubusercontent.com/20525440/68989895-98d05100-0801-11ea-8022-557f039b002e.png)
+
+Here is the ec2 instance configuration.
+It uses 2 vCPUs and 6gb of RAM. It has a security group specifically allowing the world to acces it via 25565 (the minecraft server port). It uses the amazon linux AMI, and has the IAM role attached to it that we created earlier.
+
+![image](https://user-images.githubusercontent.com/20525440/68989940-041a2300-0802-11ea-904d-cd6e405e7ea6.png)
+
+There is a custom user-data script given to the ec2 instance.
+
+
