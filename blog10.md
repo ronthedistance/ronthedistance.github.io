@@ -17,7 +17,7 @@ Looking online at prices for modded minecraft servers seems to be much pricier. 
 
 For a 6gb instance, you'd be paying normally more than 50$ per month. Note that 6 gb is a typical amount of RAM for this specific mod, due to how the world loads maps and how intensive the mob AI is.
 
-The reason for the higher price is due to the fact that a modded minecraft server has much more dependencies to manage. For something like rlCraft (the mod I wanted to host) ```there are dozens of individual java files necessary to run a server.``` As shown below.
+The reason for the higher price is due to the fact that a modded minecraft server has much more dependencies to manage. For something like rlCraft (the mod I wanted to host) ```there are dozens of individual modded java files necessary to run a server.``` As shown below.
 
 ![image](https://user-images.githubusercontent.com/20525440/68989459-0f6a5000-07fc-11ea-8723-fa32009b5de6.png)
 
