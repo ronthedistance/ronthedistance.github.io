@@ -1,11 +1,19 @@
-# Blog 9 [11.9.2019]
+# Blog 10 [11.15.2019]
 
-The second week of our foray into infrastructure as code introduces us to another devops buzzword: terraform.
+With the terraform for my portion of th project completed last week,  I wanted to talk about a pet project I'm setting up to practice using AWS and/or terraform. 
 
-## Terraform by hashicorp
-![kisspng-terraform-hashicorp-microsoft-azure-infrastructure-5b0e0b6d0be980 0079130015276470850488](https://user-images.githubusercontent.com/20525440/68502909-71ccba80-0216-11ea-991a-e697e956e51a.png)
+## Custom Modded Minecraft servers via AWS
 
+The idea to do this came about when I realized there aren't cheap cloud hosted services for modded minecraft servers.
 
+The officially supported cloud solution for minecraft is "realms"
+![image](https://user-images.githubusercontent.com/20525440/68989404-29576300-07fb-11ea-8026-793f7cb007ab.png)
+
+However, realms only allows for a limited amount of users, 10. Additionally you cannot use mods on these servers, and only  the base "vanila" install will work.
+
+![image](https://user-images.githubusercontent.com/20525440/68989388-eb5a3f00-07fa-11ea-9369-f77741db486f.png)
+
+Looking online at prices for modded minecraft servers seems to be much pricier. The most popular solution 
 
 Terraform is an application that seems to be the poster child of the "infrastructure as code" phenomenon.
 
@@ -18,29 +26,4 @@ The only change being that the file must be named ```.tf.json``` as opposed to s
 That being said:on the topic of .tf files...
 
 
-### Terraform configuration files.
 
-Terraform mainly works by reading infrastructure configuration from .tf files.
-
-Here is an example from my github 
-![image](https://user-images.githubusercontent.com/20525440/68497651-e77e5980-0209-11ea-956c-6202c6ecccab.png)
-
-This is an example of a small block of terraform code.
-
->resource 
-
-"Resource" a built-in terraform element that tells terraform to use the following block to create a resource using the following configuration variables, defines by the curly braces. The resource type "VPC" in this case and the resource name "project1-vpc" are used as an identifier for the Terraform module, but does not necessarily have significance ouside Terraform.
-
-The inner configuration elements are in the block defined by the curly braces and are arguments needed to create the resources itself. 
-
-So in the image shown, we declare to use the VPC resource from AWS, and from here on it, anything talking about "project1-vpc" is going to refer to the resource instance as shown in the image above. We then declare that this VPC will be able to use DNS, and consists of the 172.16../16 network.
-
-Lastly, we see the "tag" section. This is the actual tag that can be used to search or reference this VPC resource within AWS cli or the AWS console. **_it DOES NOT have to be equal to the tag given by Terraform in the beginning_**. ~~This may have been a headache for me when I was playing around with it~~
-
-Regarding the resource and item ID mentioned earlier, these can be referred to in later resources using curly braces.
-
-![image](https://user-images.githubusercontent.com/20525440/68502164-a2135980-0214-11ea-9b49-e7c7d3411251.png)
-
-Here we see the block used to create a subnet within the vpc shown earlier.
-
-How do I know it's in that vpc?
