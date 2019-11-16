@@ -108,5 +108,5 @@ How much of this can be automated via terraform and ansible?
 
 How will I resolve dependencies, and how often?
 
-More to come on these topics later.
+More to come on these topics later, as I actually find a solution.
 
