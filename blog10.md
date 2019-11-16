@@ -17,7 +17,7 @@ Looking online at prices for modded minecraft servers seems to be much pricier. 
 
 For a 6gb instance, you'd be paying normally more than 50$ per month. Note that 6 gb is a typical amount of RAM for this specific mod, due to how the world loads maps and how intensive the mob AI is.
 
-The reason being that a modded minecraft server has much more dependencies to manage. For something like rlCraft (the mod I wanted to host) ```there are dozens of individual java files necessary to run a server.``` As shown below.
+The reason for the higher price is due to the fact that a modded minecraft server has much more dependencies to manage. For something like rlCraft (the mod I wanted to host) ```there are dozens of individual java files necessary to run a server.``` As shown below.
 
 ![image](https://user-images.githubusercontent.com/20525440/68989459-0f6a5000-07fc-11ea-8723-fa32009b5de6.png)
 
@@ -37,7 +37,7 @@ Thus I had my requirements:
 -A way to change the modpack necessary in addition to saving world files
 ```
 
-###Progress so far...
+### Progress so far...
 
 ![image](https://user-images.githubusercontent.com/20525440/68989571-abe12200-07fd-11ea-82c2-2641bf7661f2.png)
 
@@ -79,7 +79,7 @@ This is the policy created that will be attached to the role. Note the most impo
 
 This is the role which that policy attaches to. It's an ec2 instance role with specific s3 bucket permissions.
 
-### the actual server
+# the actual server
 
 ![image](https://user-images.githubusercontent.com/20525440/68989895-98d05100-0801-11ea-8022-557f039b002e.png)
 
@@ -90,4 +90,23 @@ It uses 2 vCPUs and 6gb of RAM. It has a security group specifically allowing th
 
 There is a custom user-data script given to the ec2 instance.
 
+It installs the correct version of the JDK, creates and gives owner access to the minecraft directory, downloads stuff from the s3 bucket we created before, forces the server to accept the EULA (normally something you have to do via GUI), unzips the modfolder from the s3 bucket, then reloads the minecraft.service file we created earlier via systemd.
+
+# IT'S ALIIIIIIIIVE
+
+![image](https://user-images.githubusercontent.com/20525440/68990017-cf5a9b80-0802-11ea-8360-884ab9d261bd.png)
+
+![image](https://user-images.githubusercontent.com/20525440/68990033-1d6f9f00-0803-11ea-8a2d-3ea4b6143d06.png)
+
+We can point the minecraft launcher to our aws instance by typing in it's public server IP.
+
+Now we move on to next steps.
+
+Will we need to load balance traffic somehow?
+
+How much of this can be automated via terraform and ansible?
+
+How will I resolve dependencies, and how often?
+
+More to come on these topics later.
 
