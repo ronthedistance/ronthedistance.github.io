@@ -23,15 +23,20 @@ The reason being that a modded minecraft server has much more dependencies to ma
 
 Each of these will have a minimum of 1 configuration file associated with it, and may have dependencies like a certain version of the java development kit or certain resource packs such as textures or shaders to be included in a readable directory.
 
-Terraform is an application that seems to be the poster child of the "infrastructure as code" phenomenon.
+As much as I appreciate how much work that is, I am NOT about to pay $50 a month for a gaming server, and I don't want to punch a hole in my home firewall for port forwarding to roll one off my home computer.
 
-Through various configuration files that are structured it's own native syntax, we can produce code to spin up machines that are exactly identical to each other, as well as change the amount of resources they individually use.
+I also wouldn't be very fond of the electricity bill associated with this.
 
-Terraform syntax is very similar to JSON, so much so they they even natively support JSON, as shown [here.](https://www.terraform.io/docs/configuration/syntax-json.html)
 
-The only change being that the file must be named ```.tf.json``` as opposed to simply ```.tf```
+Thus I had my requirements:
+```
+-A publically accessible modded rlCraft minecraft server
+-SPOT instancing instead of always up instacing to save money
+-A way to automatically shut down / start up the server in order to additionally save money
+-Dependencies managed automatically
+-A way to change the modpack necessary in addition to saving world files
+```
 
-That being said:on the topic of .tf files...
 
 
 
