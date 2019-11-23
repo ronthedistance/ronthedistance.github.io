@@ -94,7 +94,7 @@ We can time this, like so:
 ```
 start_time = time.time()
 with PoolExecutor(max_workers=6) as executor:
-for _ in executor.map(getResponseCodes,getCSVColumnList.hostnameList,getCSVColumnList.ipList,getCSVColumnList.netblockList,):
+for _ in executor.map(getResponseCodes,giantListofURLs,):
 	pass
 print("--- %s seconds ---" % (time.time() - start_time))
 ```
