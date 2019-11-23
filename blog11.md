@@ -40,8 +40,7 @@ def getResponseCodes(url):
 	try:
 		connection = 
 		http.client.HTTPConnection(url,port,timeout=5) 
-		connection.request('GET',url) response = 
-		connection.getresponse() 
+		connection.request('GET',url) response = connection.getresponse() 
 		arbitrarylist.append(response)
 	
 with PoolExecutor(max_workers=6) as executor:
@@ -91,4 +90,23 @@ thread 6: getResponseCodes(giantListofURLs[15])
 At the end, you'll still get the list of response codes that you originally needed.
 
 This is magnitudes faster than your linear version of the code. 
+We can time this, like so:
+```
+start_time = time.time()
+with PoolExecutor(max_workers=6) as executor:
+for _ in executor.map(getResponseCodes,getCSVColumnList.hostnameList,getCSVColumnList.ipList,getCSVColumnList.netblockList,):
+	pass
+print("--- %s seconds ---" % (time.time() - start_time))
+```
+![image](https://user-images.githubusercontent.com/20525440/69475302-561df400-0d80-11ea-9679-cae5436e1464.png)
+Here is the original execution time of the linear example.
 
+![image](https://user-images.githubusercontent.com/20525440/69475313-6cc44b00-0d80-11ea-8d62-1d14d240ab8b.png)
+This is the same code running with 4 works in the threadpool. As you can see, the number almost directly ties in to how much faster the program runs. 
+
+Like with all forms of parallelism, we do run the risk of race conditions, so we need to limit the amount done by the task.
+
+Say for example, we needed to append not only IP, but the machine name, OS, etc.
+With multiple threads of execution, if you're not careful, the task in one thread to append the list of IPs might not finish in time before another thread starts appending to the list. This will result in incorrect mapping of  machine names to IPs.
+
+This risk increases with the number of max workers in the threadpool, so take that into consideration when designing your program.
