@@ -99,9 +99,11 @@ for _ in executor.map(getResponseCodes,giantListofURLs,):
 print("--- %s seconds ---" % (time.time() - start_time))
 ```
 ![image](https://user-images.githubusercontent.com/20525440/69475302-561df400-0d80-11ea-9679-cae5436e1464.png)
+
 Here is the original execution time of the linear example.
 
 ![image](https://user-images.githubusercontent.com/20525440/69475313-6cc44b00-0d80-11ea-8d62-1d14d240ab8b.png)
+
 This is the same code running with 4 works in the threadpool. As you can see, the number almost directly ties in to how much faster the program runs. 
 
 Like with all forms of parallelism, we do run the risk of race conditions, so we need to limit the amount done by the task.
