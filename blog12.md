@@ -39,6 +39,38 @@ Some of the highlights to point out in this section are
 
 - load_balancer -- a load balancer is required to send requests to multiple containers via a round-robin priority system.
 
+## Cluster
+![image](https://user-images.githubusercontent.com/20525440/70370688-24785300-187f-11ea-9813-b2066ab9f7f1.png) 
 
-![image](https://user-images.githubusercontent.com/20525440/70370688-24785300-187f-11ea-9813-b2066ab9f7f1.png)
+Here is the launch configuration for the cluster in the 1c availabiulity zone.
+Typically, when referring to a cluster via ECS, you're thinking about a 'Fargate' Cluster.
 
+Fargate clusters run via individual ec2 instances that will automatically manage our containers for us. Here we see that it pulls the latest amazon linux AMI to build the ec2 instance, our variable for instance type in this case represents a t2.large ec2 instance to host the containers defined previously.
+
+User_data is an attribute that defines what runs at startup of an ec2 instance in a fargate cluster.
+
+
+![image](https://user-images.githubusercontent.com/20525440/70370727-9fda0480-187f-11ea-85f4-cf39780d22f0.png)
+
+In our case, it simply makes sure that the right ECS cluster service is referenced upon startup of an ec2 instance.
+
+
+## Elastic Container Registry
+
+If you noticed in the pictures previous, there was a reference to an image named "terrawinchell:pleasework"
+
+![image](https://user-images.githubusercontent.com/20525440/70370746-e92a5400-187f-11ea-8964-f50c02c65fe7.png)
+
+The above picture shows that repository in question.
+
+![image](https://user-images.githubusercontent.com/20525440/70370758-21ca2d80-1880-11ea-8332-0d5512e858cf.png)
+
+
+After building a dockerfile, we can tag the image and push it to a remote repository that exists within our AWS console. 
+
+Anything within the same region (us-west-1 for instance) will be able to reference
+```464696867679.dkr.ecr.us-west-1.amazonaws.com/terrawinchell:latest```
+in order to pull the image and use it to build a container.
+
+
+Please see https://github.com/ronthedistance/ECS-services-DIPP for a working sample of an aws ECS cluster that serves a web application.
