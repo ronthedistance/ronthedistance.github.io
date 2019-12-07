@@ -29,3 +29,16 @@ These are small blueprints for your application, and describe containers through
 The code seen above is from the original test terraform following walkthroughs on youtube and github.
 
 We see that the containers have port 80 open, use a certain amount of memory and cpu, use the latest version of the apache image on runtime, and have logDriver resources within the EU west availability. 
+
+## Service Definitions
+
+Referring to the same figure as the previous section, the "service" definition is meant to describe the clustered service that you are running.
+
+Some of the highlights to point out in this section are 
+- "desired_count" -- This states how many ec2 hosts are the "desired" state of your cluster. i.e. The service you run wants to get to a certain level of resources.It can scale up or maybe even down via an autoscaling policy, but it always wants to return to the number of resources required to run the desired count.
+
+- load_balancer -- a load balancer is required to send requests to multiple containers via a round-robin priority system.
+
+
+![image](https://user-images.githubusercontent.com/20525440/70370688-24785300-187f-11ea-9813-b2066ab9f7f1.png)
+
