@@ -30,9 +30,4 @@ From then on, when certain Cloudwatch events are seen, an SQS queue is populated
 That "auto remediate" lambda function will additionally write to an SQS queue should it fail to remediate an issue, called the "DLQ"
 There is a customizable "RETRYCOUNT" which prevents the function from infinitely using lambda resources should the function never be able to remediate the issue. 
 Finally, logs about the function are written to an AWS SNS Topic to be inspected by an administrator on a weekly or monthly basis.
-
-
-
-
-
-
+Tet
