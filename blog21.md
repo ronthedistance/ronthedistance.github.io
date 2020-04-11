@@ -10,9 +10,9 @@ It's also known for some very awesome API documentation and usage, which you can
 
 ![image](https://user-images.githubusercontent.com/20525440/79036340-51fe4180-7b7c-11ea-874c-75589a7a247b.png)
 
-Policies are templates of things to look for in a scan. This can be a network scan, compliance audit, specture/meldown detection, etc. 
+Policies are templates of things to look for in a Nessus scan. This can be a network scan, compliance audit, spectre/meldown detection, etc. 
 
-You typically pick and edit a policy edit.
+You typically pick a policy template and edit that policy to fit your needs
 
 ![image](https://user-images.githubusercontent.com/20525440/79037015-87a62900-7b82-11ea-8cd4-726b5b7a301e.png)
   
@@ -32,7 +32,7 @@ response = requests.request("POST", url, data=payload, headers=headers)
 print(response.text)
   ```
 
-We can emulate the policy creation by taking the UUID of the policy template we want to create and send a POST request to the API endpoint.
+We can emulate the policy creation by taking the UUID of the policy template we want to edit and send a POST request to the API endpoint.
 ```
 import setPortScanRange
 import requests
@@ -62,14 +62,14 @@ print(payload)
 response = requests.request("PUT", url, headers=headers,data=payload)
 print(response.text)
 ```
-We can then grab use a policy object in order to update this in the future.
+We can then use a policy object in order to update this in the future.
 
 ![image](https://user-images.githubusercontent.com/20525440/79037167-9c36f100-7b83-11ea-98df-f9fd1ba96e80.png)
 
-To explain, ACCESS and SECRET are API keys specific to your teable license. You muist generate them, and in this usage we call them from an environment variable.
+To explain, ACCESS and SECRET are API keys specific to your tenable license. You must generate them, and in this usage we call them from an environment variable.
 
 We then use a format string to grab a policy number from the user of the script.
-e.g. python3 polictest.py 400 would set our URL to policy ID 400
+e.g: running python3 policytest.py 400 would set our URL to policy ID 400
 
 In the headers , we specify that we want JSON data from that URL, using our access and secret keys set before.
 
