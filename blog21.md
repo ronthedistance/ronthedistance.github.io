@@ -87,4 +87,4 @@ We take the JSON object we have and update the "portscanrange" list to include p
 
 Using a "put" request, we can then make an API call with the new JSON object to update our current portscan range for a given policy.
 
-By setting this as a cronjob reading from a file, you can automate whcih ports your nessus scanners are scanning for on advanced network sfcans.
+By setting this as a cronjob reading from a file, you can automate which ports your nessus scanners are scanning for on advanced network sfcans.
