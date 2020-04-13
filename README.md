@@ -1,3 +1,5 @@
 # ronthedistance.github.io
 
-Source code for github pages served via Jekyll.
+Markdown for various blog posts served via Jekyll / Github pages
+
+Need pagination.
