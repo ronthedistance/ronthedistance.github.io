@@ -32,3 +32,14 @@ This is taken from the official microsoft documentation on the function.
 Note that BEFORE, the decompiler did not list any passed parameters for the function, depsite parameters existing in memory when the function is called.
 
 Now the function's parameters are properly represented in the decompiler.
+
+
+
+Again here we see the common windows InternetOpen function, being listed as a void return function with no parameters.
+
+![image](https://user-images.githubusercontent.com/20525440/79630474-6e632680-8106-11ea-9223-4142b55ac59a.png)
+
+![image](https://user-images.githubusercontent.com/20525440/79630551-1e389400-8107-11ea-8a15-6d479952a2d1.png)
+
+we can rename and edit the function signature so that the disassembly and decompilation properly reflect the data types and variable names used in the actual windows function.
+
