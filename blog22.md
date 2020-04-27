@@ -2,7 +2,7 @@
 
 Decompilers and dissassemblers are useful, but not an end-all be all. 
 
-It can't perfectly pull out all the parameters, comments, and return values for the binary you are analyzing, so sometimes you have to be locate those signatures online and replace them to get a full understanding of the code
+It can't perfectly pull out all the parameters, comments, and return values for the binary you are analyzing, so sometimes you have to  locate those signatures online and replace them to get a full understanding of the code
 
 
 ### what are function signatures?
