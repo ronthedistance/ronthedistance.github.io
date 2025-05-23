@@ -7,3 +7,5 @@ This will be more fleshed out eventually, as a resource for me to talk about lif
 See the [Home page](/ronthedistance.github.io/blog2.md)
 
 ![punpicture](https://user-images.githubusercontent.com/20525440/64902529-5ea9ce00-d65d-11e9-8431-14f74b7c0e47.jpg)
+
+[Blog 3](/ronthedistance.github.io/blog3.md)
